@@ -30,6 +30,11 @@ with st.sidebar:
     # Menambahkan logo perusahaan
     st.image("../logo.png")
 
+    option = st.sidebar.selectbox(
+    'Please Select:',
+    ('Home','Dataframe','Chart')
+)
+
 # Membuat dashboard
 st.header("Sa'adah Dashboard")
 st.markdown("<br>", unsafe_allow_html=True)  # untuk jarak
@@ -40,7 +45,7 @@ bypayment_type_df = create_bypayment_type_df(all_df)
 # Memanggil fungsi untuk mendapatkan df_top_10
 df_top_10 = create_grouped_df(all_df)  # Pastikan df_top_10 didefinisikan
 
-col1, col2 = st.columns(2)
+col1 = st.columns(1)[0]
 
 with col1:
     colors = ['#973131', '#E0A75E', '#F9D689', '#F5E7B2']
